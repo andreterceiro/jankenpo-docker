@@ -1,0 +1,62 @@
+<html>
+    <head>
+        <title>Jankenpo</title>
+        <meta charset="utf-8">
+        <style>
+            .option {
+                border: 1px solid #000;
+                margin-left: 30px;
+                margin-top: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            Please click in your option:
+            <hr />
+            <span>
+                <img src="assets/paper.png" class="option" onclick="process('paper')" />
+            </span>
+            <span>
+                <img src="assets/rock.png" class="option" onclick="process('rock')" />
+            </span>
+            <span>
+                <img src="assets/scissors.png" class="option" onclick="process('scissors')" />
+            </span>
+        <script>
+            /**
+             * Alert who is the winner
+             * user GET parameter choice x computer random choice 
+             * 
+             * @param {string} userChoice The choice of the user
+             *
+             * @return {null}
+             */
+            function process(userChoice) {
+                if (userChoice != "paper" && userChoice != "rock" && userChoice != "scissors") {
+                    alert("Please select your choice.");
+                }
+                const computerChoice = getComputerChoice();
+
+                if ((userChoice == "paper" && computerChoice == "rock") || (userChoice == "rock" && computerChoice == "scissors") || (userChoice == "scissors" && computerChoice == "paper")) {  
+                    alert(`User win. Computer selected ${computerChoice}.`);
+                } else if (userChoice == computerChoice) {
+                    alert(`Draw. Computer selected ${computerChoice}.`);
+                } else {
+                    alert(`Computer win. Computer selected ${computerChoice}.`);
+                }
+            }
+
+            /**
+            * Returns the computer choice
+            * 
+            * @return {string} A string representing the choice, like 'rock'
+            */
+            function getComputerChoice() {
+                const choices = ["paper", "rock", "scissors"];
+                const randomComputerIndex = Math.floor(Math.random() * 3);
+                return choices[randomComputerIndex];
+            }
+        </script>
+    </body>
+</html>
