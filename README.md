@@ -38,4 +38,8 @@ We:
 
 Now if you access [http://127.0.0.1:8000](http://127.0.0.1:8000) you will see this page and play Jankenpo:
 
-![demo screenshot](demo.png) 
+![demo screenshot](demo.png)
+
+# Video showing the execution:
+
+[https://www.youtube.com/watch?v=5ZElo6XY9jY](https://www.youtube.com/watch?v=5ZElo6XY9jY)
